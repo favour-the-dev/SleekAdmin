@@ -23,7 +23,7 @@ function SideBar() {
   return (
     <>
       <div
-        className={`p-3 bg-[#fafafa] hidden max-w-fit min-h-screen border border-gray-200 md:flex flex-col gap-8 duration-200 ease-in-out`}
+        className={`p-3 bg-primary hidden min-w-fit md:w-full max-w-[20dvw] min-h-screen border border-gray-200 md:flex flex-col gap-8 duration-200 ease-in-out`}
       >
         {/* nav links */}
         <div className="flex flex-col gap-1">
@@ -31,9 +31,9 @@ function SideBar() {
             href={"/dashboard"}
             className={`${
               pathName === "/dashboard"
-                ? "font-semibold bg-gray-200 text-[#2a2a2a] border-l-4 border-[#2a2a2a]"
+                ? "font-semibold bg-gray-200 text-secondary border-l-4 border-secondary"
                 : "text-gray-600"
-            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-[#2a2a2a] hover:border-l-4 hover:border-[#2a2a2a]`}
+            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-secondary hover:border-l-4 hover:border-secondary`}
           >
             <span className="flex items-center gap-2 px-3">
               <MdDashboard className="" /> Dashboard
@@ -44,9 +44,9 @@ function SideBar() {
             href={"/user-management"}
             className={`${
               pathName === "/user-management"
-                ? "font-semibold bg-gray-200 text-[#2a2a2a] border-l-4 border-[#2a2a2a]"
+                ? "font-semibold bg-gray-200 text-secondary border-l-4 border-secondary"
                 : "text-gray-600"
-            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-[#2a2a2a] hover:border-l-4 hover:border-[#2a2a2a]`}
+            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-secondary hover:border-l-4 hover:border-secondary`}
           >
             <span className="flex items-center gap-2 px-3">
               <FaRegUser className="" /> User Management
@@ -57,9 +57,9 @@ function SideBar() {
             href={"/artisan-management"}
             className={`${
               pathName === "/artisan-management"
-                ? "font-semibold bg-gray-200 text-[#2a2a2a] border-l-4 border-[#2a2a2a]"
+                ? "font-semibold bg-gray-200 text-secondary border-l-4 border-secondary"
                 : "text-gray-600"
-            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-[#2a2a2a] hover:border-l-4 hover:border-[#2a2a2a]`}
+            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-secondary hover:border-l-4 hover:border-secondary`}
           >
             <span className="flex items-center gap-2 px-3">
               <GrUserWorker className="" /> Artisan Management
@@ -70,9 +70,9 @@ function SideBar() {
             href={"/jobs"}
             className={`${
               pathName === "/jobs"
-                ? "font-semibold bg-gray-200 text-[#2a2a2a] border-l-4 border-[#2a2a2a]"
+                ? "font-semibold bg-gray-200 text-secondary border-l-4 border-secondary"
                 : "text-gray-600"
-            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-[#2a2a2a] hover:border-l-4 hover:border-[#2a2a2a]`}
+            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-secondary hover:border-l-4 hover:border-secondary`}
           >
             <span className="flex items-center gap-2 px-3">
               <MdOutlineWorkOutline className="" /> Jobs
@@ -83,9 +83,9 @@ function SideBar() {
             href={"/transactions"}
             className={`${
               pathName === "/transactions"
-                ? "font-semibold bg-gray-200 text-[#2a2a2a] border-l-4 border-[#2a2a2a]"
+                ? "font-semibold bg-gray-200 text-secondary border-l-4 border-secondary"
                 : "text-gray-600"
-            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-[#2a2a2a] hover:border-l-4 hover:border-[#2a2a2a]`}
+            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-secondary hover:border-l-4 hover:border-secondary`}
           >
             <span className="flex items-center gap-2 px-3">
               <GrTransaction className="" /> Transactions
@@ -96,9 +96,9 @@ function SideBar() {
             href={"/messaging"}
             className={`${
               pathName === "/messaging"
-                ? "font-semibold bg-gray-200 text-[#2a2a2a] border-l-4 border-[#2a2a2a]"
+                ? "font-semibold bg-gray-200 text-secondary border-l-4 border-secondary"
                 : "text-gray-600"
-            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-[#2a2a2a] hover:border-l-4 hover:border-[#2a2a2a]`}
+            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-secondary hover:border-l-4 hover:border-secondary`}
           >
             <span className="flex items-center gap-2 px-3">
               <FaRegMessage className="" /> Messaging & Support
@@ -109,9 +109,9 @@ function SideBar() {
             href={"/reviews"}
             className={`${
               pathName === "/reviews"
-                ? "font-semibold bg-gray-200 text-[#2a2a2a] border-l-4 border-[#2a2a2a]"
+                ? "font-semibold bg-gray-200 text-secondary border-l-4 border-secondary"
                 : "text-gray-600"
-            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-[#2a2a2a] hover:border-l-4 hover:border-[#2a2a2a]`}
+            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-secondary hover:border-l-4 hover:border-secondary`}
           >
             <span className="flex items-center gap-2 px-3">
               <MdOutlineRateReview className="" /> User Reviews
@@ -122,9 +122,9 @@ function SideBar() {
             href={"/notifications"}
             className={`${
               pathName === "/notifications"
-                ? "font-semibold bg-gray-200 text-[#2a2a2a] border-l-4 border-[#2a2a2a]"
+                ? "font-semibold bg-gray-200 text-secondary border-l-4 border-secondary"
                 : "text-gray-600"
-            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-[#2a2a2a] hover:border-l-4 hover:border-[#2a2a2a]`}
+            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-secondary hover:border-l-4 hover:border-secondary`}
           >
             <span className="flex items-center gap-2 px-3">
               <IoIosNotificationsOutline className="text-lg" />
@@ -139,9 +139,9 @@ function SideBar() {
             href={"/settings"}
             className={`${
               pathName === "/settings"
-                ? "font-semibold bg-gray-200 text-[#2a2a2a] border-l-4 border-[#2a2a2a]"
+                ? "font-semibold bg-gray-200 text-secondary border-l-4 border-secondary"
                 : "text-gray-600"
-            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-[#2a2a2a] hover:border-l-4 hover:border-[#2a2a2a]`}
+            } py-2 hover:font-semibold hover:bg-gray-200 hover:text-secondary hover:border-l-4 hover:border-secondary`}
           >
             <span className="flex items-center gap-2 px-3">
               <IoMdSettings className="" /> Settings

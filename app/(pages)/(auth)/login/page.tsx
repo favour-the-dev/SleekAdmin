@@ -18,7 +18,7 @@ export default function LoginPage() {
 
   return (
     <>
-      <section className="fixed top-0 left-0 w-screen h-screen bg-[#fafafa] text-[#2a2a2a] flex justify-between">
+      <section className="fixed top-0 left-0 w-screen h-screen bg-primary text-secondary flex justify-between">
         <div className="w-full h-full md:max-w-1/2 flex items-center justify-center">
           <div className="w-full h-full md:h-fit max-w-md p-8 rounded-lg">
             <span className="w-fit mx-auto my-12 md:my-8 font-bold text-4xl flex items-center gap-1 font-[family-name:var(--font-algy)]">
@@ -63,7 +63,7 @@ export default function LoginPage() {
 
               <button
                 type="submit"
-                className="w-full bg-[#2a2a2a] text-white p-3 rounded-md hover:opacity-90"
+                className="w-full bg-secondary text-white p-3 rounded-md hover:opacity-90"
               >
                 Log in
               </button>
@@ -74,7 +74,7 @@ export default function LoginPage() {
 
               <p className="text-center text-gray-600 text-sm">
                 Don’t have an account?{" "}
-                <Link href="/signup" className="text-[#2a2a2a] hover:underline">
+                <Link href="/signup" className="text-secondary hover:underline">
                   Sign up
                 </Link>
               </p>
@@ -83,7 +83,7 @@ export default function LoginPage() {
         </div>
 
         {/* image */}
-        <div className="hidden md:block w-full h-full max-w-1/2 bg-[#2a2a2a] text-[#fafafa]"></div>
+        <div className="hidden md:block w-full h-full max-w-1/2 bg-secondary text-primary"></div>
       </section>
     </>
   );

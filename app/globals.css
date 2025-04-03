@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #fafafa;
+  --color-secondary: #2a2a2a;
+  --color-shadeGray: #858585;
+}
+
 :root {
   --background: #fafafa;
   --foreground: #2a2a2a;
@@ -21,6 +27,10 @@ body {
 .header-btn {
   background-color: var(--foreground);
   color: var(--background);
+}
+
+.filter option:hover {
+  background-color: #2a2a2a !important; /* Tailwind's blue-200 */
 }
 
 @layer utilities {

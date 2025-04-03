@@ -4,10 +4,18 @@ import Navbar from "./components/Navbar";
 import SideBar from "./components/SideBar";
 import { Oswald } from "next/font/google";
 import { Alegreya } from "next/font/google";
+import "@mantine/core/styles.css";
+import "@mantine/charts/styles.css";
+import "@mantine/charts/styles.layer.css";
+import {
+  ColorSchemeScript,
+  MantineProvider,
+  mantineHtmlProps,
+} from "@mantine/core";
 
 export const metadata: Metadata = {
-  title: "OrderSys Admin",
-  description: "Manage all affairs of OrderSys",
+  title: "Sleek Admin",
+  description: "Manage all affairs of Sleek",
 };
 
 const oswald = Oswald({
@@ -28,12 +36,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${oswald.variable} ${algreya.variable}`}>
+    <html
+      lang="en"
+      {...mantineHtmlProps}
+      className={`${oswald.variable} ${algreya.variable}`}
+    >
+      <head>
+        <ColorSchemeScript />
+      </head>
       <body className="antialiased font-[family-name:var(--font-oswald)]">
         <Navbar />
         <div className="flex overflow-hidden">
           <SideBar />
-          <main className="overflow-auto">{children}</main>
+          <main className="overflow-auto">
+            <MantineProvider>{children}</MantineProvider>
+          </main>
         </div>
       </body>
     </html>
