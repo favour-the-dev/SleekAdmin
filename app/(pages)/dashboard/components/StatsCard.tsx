@@ -5,23 +5,34 @@ import { HiArrowTrendingUp } from "react-icons/hi2";
 import { HiArrowTrendingDown } from "react-icons/hi2";
 import { HiOutlineCollection } from "react-icons/hi";
 
+interface statsProps {
+  total: number;
+  weekly: {
+    total: number;
+    change: number;
+  };
+  monthly: {
+    total: number;
+    change: number;
+  };
+  yearly: {
+    total: number;
+    change: number;
+  };
+}
+
 interface statsCardProps {
   statName: string;
-  statData: number;
-  statChange: number;
   isRevenue?: boolean;
+  api: statsProps;
 }
-function StatsCard({
-  statName,
-  statData,
-  statChange,
-  isRevenue = false,
-}: statsCardProps) {
+function StatsCard({ statName, isRevenue = false, api }: statsCardProps) {
   const [filterState, setFilterState] = useState<{
     filter: string;
     type: string;
-  }>({ filter: "weekly", type: "last Week" });
+  }>({ filter: "all-time", type: "" });
 
+  // handles the filter select and sets the filter state based on the selected value
   function handleFilterSelect(e: React.ChangeEvent<HTMLSelectElement>) {
     if (e.target.value) {
       if (e.target.value === "weekly") {
@@ -33,15 +44,15 @@ function StatsCard({
       } else if (e.target.value === "all-time") {
         setFilterState({ filter: "all-time", type: "" });
       }
-    } else {
-      setFilterState({ filter: "weekly", type: "last Week" });
     }
   }
 
+  //  formats the number to text format
   function formatToText(value: number): string {
     return value.toLocaleString("en-US");
   }
 
+  //  formats the number to naira currency format
   function formatToNaira(value: number | string) {
     return new Intl.NumberFormat("en-NG", {
       style: "currency",
@@ -49,6 +60,35 @@ function StatsCard({
       minimumFractionDigits: 2,
     }).format(Number(value));
   }
+
+  // handles the filter state change and returns the value of the change based on the selected filter
+  function handleFilterStateChange() {
+    if (filterState.filter === "weekly") {
+      return api.weekly.change;
+    } else if (filterState.filter === "monthly") {
+      return api.monthly.change;
+    } else if (filterState.filter === "yearly") {
+      return api.yearly.change;
+    } else if (filterState.filter === "all-time") {
+      return 0;
+    }
+    return 0;
+  }
+
+  // handles the filter state change and returns the value of the total based on the selected filter
+  function handleFilterStateChangeTotal() {
+    if (filterState.filter === "weekly") {
+      return api.weekly.total;
+    } else if (filterState.filter === "monthly") {
+      return api.monthly.total;
+    } else if (filterState.filter === "yearly") {
+      return api.yearly.total;
+    } else if (filterState.filter === "all-time") {
+      return api.total;
+    }
+    return 0;
+  }
+
   return (
     <>
       <div className="bg-white p-5 min-w-[300px] border border-gray-200 rounded-lg">
@@ -66,10 +106,10 @@ function StatsCard({
               name="filter-data"
               className="filter focus:outline-none px-2 py-1 text-shadeGray cursor-pointer"
             >
+              <option value="all-time">All Time</option>
               <option value="weekly">Weekly</option>
               <option value="monthly">Monthly</option>
               <option value="yearly">Yearly</option>
-              <option value="all-time">All Time</option>
             </select>
           </div>
         </div>
@@ -77,7 +117,9 @@ function StatsCard({
         {/* data */}
         <div className={`flex flex-col gap-8`}>
           <span className="font-semibold text-3xl">
-            {isRevenue ? formatToNaira(statData) : formatToText(statData)}
+            {isRevenue
+              ? formatToNaira(handleFilterStateChangeTotal())
+              : formatToText(handleFilterStateChangeTotal())}
           </span>
 
           <span
@@ -95,18 +137,20 @@ function StatsCard({
           >
             <span
               className={`${
-                statChange > 0 ? "text-green-500" : "text-red-500"
+                handleFilterStateChange() > 0
+                  ? "text-green-500"
+                  : "text-red-500"
               }`}
             >
               {isRevenue
-                ? formatToNaira(Math.abs(statChange))
-                : formatToText(Math.abs(statChange))}
+                ? formatToNaira(Math.abs(handleFilterStateChange()))
+                : formatToText(Math.abs(handleFilterStateChange()))}{" "}
             </span>{" "}
-            {`${statChange > 0 ? "increase" : "decrease"} vs. ${
+            {`${handleFilterStateChange() > 0 ? "increase" : "decrease"} vs. ${
               filterState?.type
             }`}{" "}
             <span>
-              {statChange > 0 ? (
+              {handleFilterStateChange() > 0 ? (
                 <HiArrowTrendingUp className="text-green-500" />
               ) : (
                 <HiArrowTrendingDown className="text-red-500" />

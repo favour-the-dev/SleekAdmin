@@ -26,7 +26,7 @@ function TrendChart() {
     }
   }, [currentQuater]);
   return (
-    <div className="cursor-pointer min-w-[300px] mx-auto bg-white p-2 border border-gray-200 rounded-lg flex flex-col justify-center">
+    <div className="cursor-pointer w-full max-w-[400px] lg:max-w-[300px] mx-auto bg-white p-2 border border-gray-200 rounded-lg flex flex-col justify-center">
       <div className="w-full flex items-center justify-between mb-4">
         <h2 className="text-shadeGray text-lg font-semibold">
           Trending Artisans
@@ -45,7 +45,7 @@ function TrendChart() {
         </div>
       </div>
       <LineChart
-        h={200}
+        h={150}
         data={currentChartData}
         dataKey="month"
         withPointLabels

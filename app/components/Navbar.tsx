@@ -73,7 +73,7 @@ function Navbar() {
                 navClicked
                   ? "max-w-[70dvw] opacity-100 left-0"
                   : "max-w-[0] opacity-0 left-[-100%]"
-              } duration-200 ease-in-out bg-primary absolute top-0 h-screen rounded-r-2xl border border-gray-300 flex flex-col gap-8`}
+              } duration-200 ease-in-out bg-primary fixed z-50 top-0 h-screen rounded-r-2xl border border-gray-300 flex flex-col gap-8`}
             >
               {/* logo */}
               <div className="">

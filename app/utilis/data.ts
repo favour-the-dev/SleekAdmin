@@ -12,3 +12,85 @@ export const data = [
     { month: "Nov", Electricians: 105, Plumbers: 72, Carpenters: 65 },
     { month: "Dec", Electricians: 130, Plumbers: 90, Carpenters: 85 },
   ];
+
+  export const dashStats =
+    {
+      stats: {  
+        users: {
+          total: 5000,
+          weekly:{
+            total: 20,
+            change: 5
+          },
+          monthly: {
+            total: 100,
+            change: -20,
+          },
+          yearly: {
+            total: 1200,
+            change: 400,
+          },
+        },
+        artisans: {
+          total: 2000,
+          weekly:{
+            total: 10,
+            change: 5
+          },
+          monthly: {
+            total: 50,
+            change: -10,
+          },
+          yearly: {
+            total: 600,
+            change: 200,
+          },
+        },
+        jobs: {
+          total: 10000,
+          weekly:{
+            total: 100,
+            change: 20
+          },
+          monthly: {
+            total: 500,
+            change: -100,
+          },
+          yearly: {
+            total: 6000,
+            change: 2000,
+          },
+        },
+        jobsCompleted:{
+          total: 5000,
+          weekly:{
+            total: 50,
+            change: 10
+          },
+          monthly: {
+            total: 300,
+            change: -50,
+          },
+          yearly: {
+            total: 3600,
+            change: 1200,
+          },
+        },
+        revenue: {
+          total: 5000000,
+          weekly:{
+            total: 50000,
+            change: 10000
+          },
+          monthly: {
+            total: 200000,
+            change: -50000,
+          },
+          yearly: {
+            total: 2400000,
+            change: 800000,
+          },
+        },
+
+      }
+    }
